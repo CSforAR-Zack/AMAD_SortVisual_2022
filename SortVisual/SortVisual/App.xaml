@@ -1,0 +1,17 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SortVisual"
+             x:Class="SortVisual.App">
+    <Application.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="TextColor" Value="#1f1f1f"/>
+            <Setter Property="BackgroundColor" Value="Gray"/>
+            <Setter Property="WidthRequest" Value="12"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="End"/>
+            <Setter Property="VerticalOptions" Value="End"/>
+        </Style>
+    </Application.Resources>
+</Application>

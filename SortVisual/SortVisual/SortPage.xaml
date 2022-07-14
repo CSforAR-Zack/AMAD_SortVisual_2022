@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SortVisual.SortPage"
+             Title="SortPage"
+             BackgroundColor="Black">
+    <VerticalStackLayout HorizontalOptions="Center"
+                         VerticalOptions="Center">
+        <HorizontalStackLayout x:Name="hsl"
+                               Spacing="1"
+                               VerticalOptions="End">
+            
+        </HorizontalStackLayout>
+
+        <Button Text="Generate Values"
+                Clicked="GenerateValues"/>
+
+        <HorizontalStackLayout>
+            <Button Text="Bubble Sort"/>
+            <Button Text="Selection Sort"/>
+            <Button Text="Insertion Sort"
+                    Clicked="InsertSort"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
