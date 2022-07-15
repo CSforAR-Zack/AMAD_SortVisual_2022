@@ -2,20 +2,29 @@
 
 public class InsertionSort : Sorter
 {
-    public InsertionSort(Values values) : base(values)
+    public InsertionSort(Values values, int delay) : base(values, delay)
     {
     }
 
-    public override void Sort()
+    public override async void Sort()
     {
-        for (int j = 0; j < this.values.Labels.Count; j++)
+        ColorPicker.SetColor(this.values.Labels[0], "sorted");
+        for (int j = 1; j < this.values.Labels.Count; j++)
         {
+            ColorPicker.SetColor(this.values.Labels[j], "lookingAt");
+            await this.Pause(this.delay);
             int k = j - 1;
-            while ((k >= 0) && Convert.ToInt32(this.values.Labels[k].Text) > Convert.ToInt32(this.values.Labels[k + 1].Text))
+            while ((k >= 0) && Convert.ToInt32(this.values.Labels[k].Text) 
+                > Convert.ToInt32(this.values.Labels[k + 1].Text))
             {
+                ColorPicker.SetColor(this.values.Labels[k + 1], "current");
+                ColorPicker.SetColor(this.values.Labels[k], "lookingAt");
+                await this.Pause(this.delay);
                 this.Swap(k, k + 1);
+                ColorPicker.SetColor(this.values.Labels[k + 1], "sorted");
                 k--;
             }
+            ColorPicker.SetColor(this.values.Labels[k + 1], "sorted");
         }
         this.values.Draw();
     }
